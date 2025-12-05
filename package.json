@@ -1,0 +1,45 @@
+{
+    "name": "better-gh",
+    "version": "1.0.0",
+    "description": "An opinionated wrapper around gh CLI with better UX",
+    "type": "module",
+    "main": "src/index.ts",
+    "bin": {
+        "bgh": "bin/bgh"
+    },
+    "scripts": {
+        "dev": "bun run src/index.ts",
+        "build": "bun build src/index.ts --compile --outfile dist/bgh",
+        "build:all": "bun run build:linux && bun run build:macos && bun run build:macos-arm",
+        "build:linux": "bun build src/index.ts --compile --target=bun-linux-x64 --outfile dist/bgh-linux-x64",
+        "build:macos": "bun build src/index.ts --compile --target=bun-darwin-x64 --outfile dist/bgh-darwin-x64",
+        "build:macos-arm": "bun build src/index.ts --compile --target=bun-darwin-arm64 --outfile dist/bgh-darwin-arm64"
+    },
+    "keywords": [
+        "github",
+        "gh",
+        "cli",
+        "git",
+        "wrapper"
+    ],
+    "author": "0xWerz",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/0xWerz/bettergh.git"
+    },
+    "bugs": {
+        "url": "https://github.com/0xWerz/bettergh/issues"
+    },
+    "homepage": "https://github.com/0xWerz/bettergh#readme",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "devDependencies": {
+        "@types/bun": "latest"
+    },
+    "peerDependencies": {
+        "typescript": "^5"
+    }
+}
